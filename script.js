@@ -5,7 +5,7 @@ const apiUrl = 'https://free.ratesdb.com/v1/rates?from=JPY&to=MYR'
 async function postExchangeRate() {
   const res = await axios.get(apiUrl);
   const rates = res.data.rates;
-
+console.log(res, rates);
   const message = {
     embeds: [
       {
