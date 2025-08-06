@@ -6,6 +6,7 @@ const apiUrl = 'https://free.ratesdb.com/v1/rates?from=MYR';
 async function postExchangeRate() {
   try {
     const res = await axios.get(apiUrl, { responseType: 'text' }); // force plain text
+    console.log(res);
     const json = JSON.parse(res.data); // parse manually
     const rate = json.data.rates;
 
