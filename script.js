@@ -21,7 +21,8 @@ async function postExchangeRate() {
     ]
   };
 
-  await axios.post(webhookUrl, message);
+  const res = await axios.post(webhookUrl, message);
+  console.log(message,res)
 }
 
 postExchangeRate().catch(console.error);
