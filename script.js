@@ -12,10 +12,10 @@ async function postExchangeRate() {
     const message = {
       embeds: [
         {
-          title: '📊 Daily Currency Exchange Rate (Base: JPY)',
+          title: '📊 Daily Currency Exchange Rate (Base: 100 JPY)',
           color: 0x3498db,
           fields: [
-            { name: '🇲🇾 MYR', value: rate.toFixed(3), inline: true },
+            { name: '🇲🇾 MYR', value: rate*100, inline: true },
           ],
           footer: { text: 'Source: ratesdb.com' },
           timestamp: new Date().toISOString()
