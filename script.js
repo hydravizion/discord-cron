@@ -1,6 +1,6 @@
 const axios = require('axios');
 
-const webhookUrl = process.env.DISCORD_WEBHOOK_URL || 'https://discord.com/api/webhooks/your-webhook-url';
+const webhookUrl = process.env.DISCORD_WEBHOOK_URL;
 const apiUrl = 'https://free.ratesdb.com/v1/rates?from=MYR';
 
 async function postExchangeRate() {
