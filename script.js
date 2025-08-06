@@ -7,13 +7,12 @@ async function postExchangeRate() {
   const rates = res.data.rates;
 
   const message = {
-    content: "Harini punya jpy",
     embeds: [
       {
         title: '📊 Daily Currency Exchange Rates (Base: MYR)',
         color: 0x3498db,
         fields: [
-          { name: '🇯🇵 JPY', value: rates.JPY.toFixed(3), inline: true },
+          { name: '🇯🇵 JPY', value: rates.toFixed(3), inline: true },
         ],
         footer: { text: 'Source: exchangerate.host' },
         timestamp: new Date().toISOString()
