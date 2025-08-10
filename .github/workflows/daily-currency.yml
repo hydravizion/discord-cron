@@ -2,7 +2,7 @@ name: Daily Currency to Discord
 
 on:
   schedule:
-    - cron: '0 16 * * *'  # 12:00 AM GMT+8
+    - cron: '30 4 * * *'  # 12:00 AM GMT+8
   workflow_dispatch:
 
 jobs:
