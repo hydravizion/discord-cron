@@ -32,7 +32,7 @@ async function postExchangeRate() {
     const todayRates = latestData.rates;
     const todayStr = latestData.date; // API's own date
 
-    console.log(`📅 Latest available rates date: ${todayStr}`);
+    console.log(`📅 Latest available rates date: ${todayStr}`,JSON.stringify(latestData));
 
     // 2. Calculate yesterday from API's date
     const yesterdayDate = new Date(todayStr);
@@ -43,7 +43,7 @@ async function postExchangeRate() {
     const yesterdayData = await getRates(yesterdayStr);
     const yesterdayRates = yesterdayData.rates;
 
-    console.log(`📅 Yesterday's date: ${yesterdayStr}`);
+    console.log(`📅 Yesterday's date: ${yesterdayStr}`,JSON.stringify(yesterdayData));
 
     // 4. Build Discord message
     const message = {
@@ -73,5 +73,4 @@ async function postExchangeRate() {
   }
 }
 
-postExchangeRate();
 postExchangeRate();
