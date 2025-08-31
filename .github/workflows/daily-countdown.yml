@@ -18,6 +18,6 @@ jobs:
           node-version: 20
           cache: pnpm
       - run: pnpm install --frozen-lockfile
-      - run: pnpm countdown
+      - run: pnpm start:countdown
         env:
           DISCORD_WEBHOOK_URL_CD: ${{ secrets.DISCORD_WEBHOOK_URL_CD }}

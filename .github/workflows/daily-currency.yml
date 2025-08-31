@@ -18,6 +18,6 @@ jobs:
           node-version: 20
           cache: pnpm
       - run: pnpm install --frozen-lockfile
-      - run: pnpm currency
+      - run: pnpm start:currency
         env:
           DISCORD_WEBHOOK_URL_CUR: ${{ secrets.DISCORD_WEBHOOK_URL_CUR }}
