@@ -21,4 +21,4 @@ jobs:
       - run: pnpm start:countdown
         env:
           DISCORD_WEBHOOK_URL_CD: ${{ secrets.DISCORD_WEBHOOK_URL_CD }}
-          DISCORD_MENTIONS_CD: ${{ secrets.DISCORD_MENTIONS_CD }}
+          DISCORD_MENTIONS_CD: ${{ vars.DISCORD_MENTIONS_CD }}
