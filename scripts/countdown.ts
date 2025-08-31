@@ -1,4 +1,4 @@
-import fetch from "node-fetch";
+import axios from "axios";
 
 const DISCORD_WEBHOOK_URL = process.env.DISCORD_WEBHOOK_URL_CD as string;
 if (!DISCORD_WEBHOOK_URL) {
@@ -37,12 +37,8 @@ function getCountdownMessage() {
 async function sendMessage() {
   const message = getCountdownMessage();
 
-  await fetch(DISCORD_WEBHOOK_URL, {
-    method: "POST",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify({
-      content: message,
-    }),
+  await axios.post(DISCORD_WEBHOOK_URL, {
+    content: message,
   });
 
   console.log("Message sent:", message);
