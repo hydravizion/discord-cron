@@ -1,11 +1,12 @@
 {
   "type": "module",
   "scripts": {
-    "currency": "tsx scripts/currency.ts",
-    "countdown": "tsx scripts/countdown.ts"
+    "start:countdown": "tsx scripts/countdown.ts",
+    "start:currency": "tsx scripts/currency.ts",
+    "build": "tsc"
   },
   "devDependencies": {
-    "ts-node": "^10.9.2",
+    "tsx": "^4.20.5",
     "typescript": "^5.6.3"
   },
   "dependencies": {
