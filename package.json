@@ -1,7 +1,14 @@
 {
-  "name": "currency-bot",
-  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "currency": "tsx scripts/currency.ts",
+    "countdown": "tsx scripts/countdown.ts"
+  },
+  "devDependencies": {
+    "ts-node": "^10.9.2",
+    "typescript": "^5.6.3"
+  },
   "dependencies": {
-    "axios": "^1.6.0"
+    "axios": "^1.7.9"
   }
 }

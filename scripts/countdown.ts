@@ -12,18 +12,12 @@ const mentions = mentionEnv
   .filter((id) => id.length > 0);
 
 const mentionStrings =
-  mentions.length > 0
-    ? mentions.map((id) => {
-        if (id.startsWith("&")) return `<@${id}>`;
-        return `<@${id}>`;
-      })
-    : ["@everyone"];
+  mentions.length > 0 ? mentions.map((id) => `<@${id}>`) : ["@everyone"];
 
-function getCountdownMessage() {
+function getCountdownMessage(): string {
   const targetDate = new Date("2025-10-24T00:00:00+08:00");
   const now = new Date();
   const diff = targetDate.getTime() - now.getTime();
-
   const days = Math.floor(diff / (1000 * 60 * 60 * 24));
 
   return (
@@ -34,7 +28,7 @@ function getCountdownMessage() {
   );
 }
 
-async function sendMessage() {
+async function sendMessage(): Promise<void> {
   const message = getCountdownMessage();
 
   await axios.post(DISCORD_WEBHOOK_URL, {

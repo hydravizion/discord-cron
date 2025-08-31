@@ -2,18 +2,22 @@ name: Daily Currency to Discord
 
 on:
   schedule:
-    - cron: "0 15 * * *" # 12:00 AM GMT+8
+    - cron: "0 15 * * *" # 11:00 PM GMT+8
   workflow_dispatch:
 
 jobs:
   post-rate:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
-      - uses: actions/setup-node@v3
+      - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v4
         with:
-          node-version: 18
-      - run: npm install
-      - run: node scripts/currency.js
+          version: 9
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: pnpm
+      - run: pnpm install --frozen-lockfile
+      - run: pnpm currency
         env:
           DISCORD_WEBHOOK_URL_CUR: ${{ secrets.DISCORD_WEBHOOK_URL_CUR }}
